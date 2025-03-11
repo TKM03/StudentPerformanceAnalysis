@@ -8,7 +8,7 @@ data <- read.csv("Student_Performance_on_an_Entrance_Examination.csv", stringsAs
 
 # Verify the data loaded correctly
 head(data)
-nrow(data)  # Should be 666
+nrow(data)
 
 #<<================================DATA CLEANING========================================================>>
 
@@ -52,7 +52,7 @@ data <- data %>%
 
 # Create a cleaned dataset (no NAs in key columns)
 data_clean <- data %>% filter(!is.na(Performance_num))
-nrow(data_clean)  # Should still be 666 unless there are unexpected NAs
+nrow(data_clean) 
 
 #<<===================================EDA===============================================>>
 
@@ -90,7 +90,7 @@ unique(data_clean$Performance_num)
 
 # Ensure data is clean and numeric columns are populated
 ggplot(data_clean, aes(x = Class_XII_Percentage_num, y = Performance_num)) +
-  geom_point(color = "blue", alpha = 0.5, size = 2) +  # Increase point size for visibility
+  geom_point(color = "blue", alpha = 0.5, size = 2) +
   geom_smooth(method = "lm", color = "red") +
   labs(title = "Class XII Percentage vs. Performance", 
        x = "Class XII Percentage (Numeric)", y = "Performance (Numeric)") +
@@ -148,7 +148,7 @@ summary(ordinal_model)
 
 # Predicted probabilities
 data_clean$pred_prob <- predict(ordinal_model, type = "class")
-table(data_clean$Performance, data_clean$pred_prob)  # Confusion matrix
+table(data_clean$Performance, data_clean$pred_prob) 
 
 #<<==========================================Socioeconomic Influence====================================>>
 
