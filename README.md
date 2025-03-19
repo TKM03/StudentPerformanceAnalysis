@@ -38,7 +38,3 @@ The dataset includes:
 ### 🎓 Socioeconomic Influence
 - Analyzing the impact of parental occupation on student performance.
 - Visualization of performance trends across different socioeconomic groups.
-
-## 🚀 How to Run the Project
-### Prerequisites
-Ensure you have **R** and required libraries installed.
